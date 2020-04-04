@@ -189,13 +189,15 @@ Ubuntu 18.04 (and newer) users can install the <a href="https://packages.ubuntu.
 
 Once connected, you can verify that your traffic is being routed properly by <a href="https://www.google.com/search?q=my+ip" target="_blank">looking up your IP address on Google</a>. It should say "Your public IP address is `Your VPN Server IP`".
 
+If you get an error when trying to connect, try <a href="https://github.com/nm-l2tp/NetworkManager-l2tp/blob/master/README.md#issue-with-not-stopping-system-xl2tpd-service" target="_blank">this fix</a>.
+
 ### Fedora and CentOS
 
 Fedora 28 (and newer) and CentOS 7 users can connect using the faster [IPsec/XAuth](clients-xauth.md#linux) mode.
 
 ### Other Linux
 
-First check <a href="https://github.com/nm-l2tp/network-manager-l2tp/wiki/Prebuilt-Packages" target="_blank">here</a> to see if the `network-manager-l2tp` and `network-manager-l2tp-gnome` packages are available for your Linux distribution. If yes, install them (select strongSwan) and follow the instructions above. Alternatively, you may [configure Linux VPN clients using the command line](#configure-linux-vpn-clients-using-the-command-line).
+First check <a href="https://github.com/nm-l2tp/NetworkManager-l2tp/wiki/Prebuilt-Packages" target="_blank">here</a> to see if the `network-manager-l2tp` and `network-manager-l2tp-gnome` packages are available for your Linux distribution. If yes, install them (select strongSwan) and follow the instructions above. Alternatively, you may [configure Linux VPN clients using the command line](#configure-linux-vpn-clients-using-the-command-line).
 
 ## Troubleshooting
 
@@ -583,7 +585,7 @@ This document was adapted from the <a href="https://github.com/StreisandEffect/s
 
 Note: This license applies to this document only.
 
-Copyright (C) 2016-2019 Lin Song   
+Copyright (C) 2016-2020 Lin Song   
 Based on <a href="https://github.com/StreisandEffect/streisand/blob/6aa6b6b2735dd829ca8c417d72eb2768a89b6639/playbooks/roles/l2tp-ipsec/templates/instructions.md.j2" target="_blank">the work of Joshua Lund</a> (Copyright 2014-2016)
 
 This program is free software: you can redistribute it and/or modify it under the terms of the <a href="https://www.gnu.org/licenses/gpl.html" target="_blank">GNU General Public License</a> as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.

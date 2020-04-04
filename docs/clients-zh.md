@@ -189,13 +189,15 @@ Ubuntu 18.04 （和更新版本）用户可以安装 <a href="https://packages.u
 
 VPN 连接成功后，你可以到 <a href="https://www.ipchicken.com" target="_blank">这里</a> 检测你的 IP 地址，应该显示为`你的 VPN 服务器 IP`。
 
+如果在连接过程中遇到错误，请尝试 <a href="https://github.com/nm-l2tp/NetworkManager-l2tp/blob/master/README.md#issue-with-not-stopping-system-xl2tpd-service" target="_blank">这个解决方案</a>。
+
 ### Fedora 和 CentOS
 
 Fedora 28 （和更新版本）和 CentOS 7 用户可以使用更高效的 [IPsec/XAuth](clients-xauth-zh.md#linux) 模式连接。
 
 ### 其它 Linux
 
-首先看 <a href="https://github.com/nm-l2tp/network-manager-l2tp/wiki/Prebuilt-Packages" target="_blank">这里</a> 以确认 `network-manager-l2tp` 和 `network-manager-l2tp-gnome` 软件包是否在你的 Linux 版本上可用。如果可用，安装它们（选择使用 strongSwan）并参见上面的说明。另外，你也可以 [使用命令行配置 Linux VPN 客户端](#使用命令行配置-linux-vpn-客户端)。
+首先看 <a href="https://github.com/nm-l2tp/NetworkManager-l2tp/wiki/Prebuilt-Packages" target="_blank">这里</a> 以确认 `network-manager-l2tp` 和 `network-manager-l2tp-gnome` 软件包是否在你的 Linux 版本上可用。如果可用，安装它们（选择使用 strongSwan）并参见上面的说明。另外，你也可以 [使用命令行配置 Linux VPN 客户端](#使用命令行配置-linux-vpn-客户端)。
 
 ## 故障排除
 
@@ -584,7 +586,7 @@ strongswan down myvpn
 
 注： 这个协议仅适用于本文档。
 
-版权所有 (C) 2016-2019 Lin Song   
+版权所有 (C) 2016-2020 Lin Song   
 基于 <a href="https://github.com/StreisandEffect/streisand/blob/6aa6b6b2735dd829ca8c417d72eb2768a89b6639/playbooks/roles/l2tp-ipsec/templates/instructions.md.j2" target="_blank">Joshua Lund 的工作</a> (版权所有 2014-2016)
 
 本程序为自由软件，在自由软件联盟发布的<a href="https://www.gnu.org/licenses/gpl.html" target="_blank"> GNU 通用公共许可协议</a>的约束下，你可以对其进行再发布及修改。协议版本为第三版或（随你）更新的版本。

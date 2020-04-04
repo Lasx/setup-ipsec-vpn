@@ -2,7 +2,7 @@
 #
 # Script to upgrade Libreswan on CentOS and RHEL
 #
-# Copyright (C) 2016-2019 Lin Song <linsongui@gmail.com>
+# Copyright (C) 2016-2020 Lin Song <linsongui@gmail.com>
 #
 # This work is licensed under the Creative Commons Attribution-ShareAlike 3.0
 # Unported License: http://creativecommons.org/licenses/by-sa/3.0/
@@ -23,7 +23,9 @@ exiterr2() { exiterr "'yum install' failed."; }
 vpnupgrade() {
 
 if ! grep -qs -e "release 6" -e "release 7" -e "release 8" /etc/redhat-release; then
-  exiterr "This script only supports CentOS/RHEL 6, 7 and 8."
+  echo "Error: This script only supports CentOS/RHEL 6, 7 and 8." >&2
+  echo "For Ubuntu/Debian, use https://git.io/vpnupgrade" >&2
+  exit 1
 fi
 
 if [ -f /proc/user_beancounters ]; then
@@ -105,11 +107,22 @@ Version to install: Libreswan $SWAN_VER
 EOF
 
 case "$SWAN_VER" in
+  3.19|3.2[0123567])
+cat <<'EOF'
+WARNING: Older versions of Libreswan may contain security vulnerabilities.
+    See: https://libreswan.org/security/
+    Are you sure you want to install an older version?
+
+EOF
+    ;;
+esac
+
+case "$SWAN_VER" in
   3.2[35])
 cat <<'EOF'
 WARNING: Libreswan 3.23 and 3.25 have an issue with connecting multiple
     IPsec/XAuth VPN clients from behind the same NAT (e.g. home router).
-    DO NOT upgrade to 3.23/3.25 if your use cases include the above.
+    DO NOT install 3.23/3.25 if your use cases include the above.
 
 EOF
     ;;
